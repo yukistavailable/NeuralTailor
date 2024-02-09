@@ -1,3 +1,7 @@
+outputs
+data
+garment-data
+
 # Jupyter tmp files 
 .ipynb_checkpoints
 
