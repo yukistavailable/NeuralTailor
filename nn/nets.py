@@ -3,8 +3,8 @@ import torch.nn as nn
 from sparsemax import Sparsemax
 
 # my modules
-from metrics.composed_loss import ComposedLoss, ComposedPatternLoss
-import net_blocks as blocks
+from nn.metrics.composed_loss import ComposedLoss, ComposedPatternLoss
+import nn.net_blocks as blocks
 
 
 # ------ Basic Interface --------

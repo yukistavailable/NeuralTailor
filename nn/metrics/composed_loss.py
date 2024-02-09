@@ -4,8 +4,8 @@ import torch.nn as nn
 from entmax import SparsemaxLoss  # https://github.com/deep-spin/entmax
 
 # My modules
-from metrics.losses import *
-from metrics.metrics import *
+from nn.metrics.losses import *
+from nn.metrics.metrics import *
 
 
 class ComposedLoss():

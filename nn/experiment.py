@@ -9,8 +9,8 @@ from torch import nn
 import wandb as wb
 
 # My
-import data
-import nets
+from nn import data
+from nn import nets
 
 
 # ------- Class for experiment tracking and information storage -------

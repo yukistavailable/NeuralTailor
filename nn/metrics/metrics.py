@@ -5,8 +5,8 @@
 import torch
 
 # My modules
-from data import Garment3DPatternFullDataset as PatternDataset
-from metrics.eval_utils import * 
+from nn.data import Garment3DPatternFullDataset as PatternDataset
+from nn.metrics.eval_utils import * 
 
 
 # ------- custom quality metrics --------

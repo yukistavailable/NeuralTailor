@@ -1,7 +1,7 @@
 import torch
 
 # My modules
-from metrics.eval_utils import eval_pad_vector
+from nn.metrics.eval_utils import eval_pad_vector
 
 
 # ------- custom losses --------

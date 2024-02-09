@@ -9,7 +9,7 @@ import torch
 from torch.utils.data import DataLoader, Subset
 
 # My modules
-from data.utils import BalancedBatchSampler
+from nn.data.utils import BalancedBatchSampler
 
 
 # ---------------------- Main Wrapper ------------------

@@ -5,7 +5,7 @@
 import torch
 
 # My modules
-from data import InvalidPatternDefError
+from nn.data import InvalidPatternDefError
 
 
 # ------- Model evaluation shortcut -------------

@@ -11,9 +11,9 @@ import igl
 
 # My modules
 from customconfig import Properties
-from data.pattern_converter import NNSewingPattern, InvalidPatternDefError
-import data.transforms as transforms
-from data.panel_classes import PanelClasses
+from nn.data.pattern_converter import NNSewingPattern, InvalidPatternDefError
+import nn.data.transforms as transforms
+from nn.data.panel_classes import PanelClasses
 
 # --------------------- Datasets -------------------------
 
@@ -41,6 +41,9 @@ class BaseDataset(Dataset):
         self.datapoints_names = []
         self.dataset_start_ids = []  # (folder, start_id) tuples -- ordered by start id
         for data_folder in self.data_folders:
+            # print(data_folder)
+            # print(self.root_path)
+            # print(self.root_path / data_folder)
             _, dirs, _ = next(os.walk(self.root_path / data_folder))
             # dataset name as part of datapoint name
             datapoints_names = [data_folder + '/' + name for name in dirs]
@@ -907,7 +910,7 @@ class Garment3DPatternFullDataset(GarmentBaseDataset):
     def _empty_panels_mask(self, num_edges):
         """Empty panels as boolean mask"""
 
-        mask = np.zeros(len(num_edges), dtype=np.bool)
+        mask = np.zeros(len(num_edges), dtype=np.bool_)
         mask[num_edges == 0] = True
 
         return mask
@@ -972,7 +975,7 @@ class Garment3DPatternFullDataset(GarmentBaseDataset):
         """
         Construct the mask to identify edges that are not connected to any other
         """
-        mask = np.ones((pattern.shape[0], pattern.shape[1]), dtype=np.bool)
+        mask = np.ones((pattern.shape[0], pattern.shape[1]), dtype=np.bool_)
         max_edge = pattern.shape[1]
 
         for side in stitches[:, :num_stitches]:  # ignore the padded part
